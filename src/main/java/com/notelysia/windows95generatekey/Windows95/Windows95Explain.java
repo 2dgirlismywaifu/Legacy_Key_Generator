@@ -15,9 +15,9 @@ public class Windows95Explain extends javax.swing.JFrame {
         String text = "<html>";
         text += "Windows 95 OEM Key Format: XXXYY-OEM-NNSSSSS-ZZZZZ<br>"; //<br>: xuống dòng
         text += "1. XXX: starting from 001 - 366<br>";
-        text += "2. YY: starts with 95 - 03<br>";
-        text += "3. NN: always 00<br>";
-        text += "4. SSSSS: random number, sum of digits in it is divisible by 7<br>";
+        text += "2. YY: starts with 95 - 03 (1995-2003)<br>";
+        text += "3. N: always 0<br>";
+        text += "4. SSSSSS: random number, sum of digits in it is divisible by 7<br>";
         text += "5. ZZZZZ: random number<br>";
         TextExplain.setText(text);
     }

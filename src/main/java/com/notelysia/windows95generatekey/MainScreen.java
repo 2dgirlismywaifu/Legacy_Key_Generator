@@ -3,6 +3,7 @@ package com.notelysia.windows95generatekey;
 import com.notelysia.windows95generatekey.WindowsNTAndOffice95.WindowsNTExplain;
 import com.notelysia.windows95generatekey.Windows95.Windows95Explain;
 import com.notelysia.windows95generatekey.Windows95.Windows95Key;
+import com.notelysia.windows95generatekey.WindowsNTAndOffice95.Windows95RTMKey;
 import com.notelysia.windows95generatekey.WindowsNTAndOffice95.WindowsNTKey;
 
 public class MainScreen extends javax.swing.JFrame {
@@ -12,6 +13,7 @@ public class MainScreen extends javax.swing.JFrame {
      */
     Windows95Explain windows95Explain;
     Windows95Key windows95Key;
+    Windows95RTMKey windows95RTMKey;
     WindowsNTExplain windowsNTExplain;
     WindowsNTKey windowsNTKey;
     public MainScreen() {
@@ -37,6 +39,7 @@ public class MainScreen extends javax.swing.JFrame {
         KeyWindowsNTReturn = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         KeyWindowsNTExplain = new javax.swing.JLabel();
+        Windows95RTM = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         MainMenu = new javax.swing.JMenu();
         Windows95Explain = new javax.swing.JMenuItem();
@@ -129,7 +132,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Windows NT 4.0 / Office 95");
+        jLabel4.setText("Windows 95 RTM, Windows NT 4.0 / Office 95");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-windows-95-96.png"))); // NOI18N
 
@@ -156,6 +159,9 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
+        Windows95RTM.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Windows95RTM.setText("Windows 95 RTM Key (NOT OEM KEY)");
+
         javax.swing.GroupLayout WindowsNTPaneLayout = new javax.swing.GroupLayout(WindowsNTPane);
         WindowsNTPane.setLayout(WindowsNTPaneLayout);
         WindowsNTPaneLayout.setHorizontalGroup(
@@ -169,6 +175,9 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(WindowsNTPaneLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(WindowsNTPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(WindowsNTPaneLayout.createSequentialGroup()
+                        .addComponent(Windows95RTM)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(WindowsNTPaneLayout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,14 +203,16 @@ public class MainScreen extends javax.swing.JFrame {
                     .addGroup(WindowsNTPaneLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(Windows95RTM)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(WindowsNTPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WindowsNTPaneLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(KeyWindowsNTExplain)
-                        .addGap(13, 13, 13)))
-                .addGap(18, 18, 18))
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WindowsNTPaneLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18))))
         );
 
         MainMenu.setText("File");
@@ -268,7 +279,7 @@ public class MainScreen extends javax.swing.JFrame {
                 .addComponent(Windows95Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(WindowsNTPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -284,8 +295,15 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void GenereateWindowsNTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenereateWindowsNTActionPerformed
         // TODO add your handling code here:
-        windowsNTKey = new WindowsNTKey();     
-        KeyWindowsNTReturn.setText(windowsNTKey.getWindowsNTKey());
+        if (Windows95RTM.isSelected()) {
+            windows95RTMKey = new Windows95RTMKey();
+            KeyWindowsNTReturn.setText(windows95RTMKey.getWindows95RTMKey());
+        }
+        else {
+            windowsNTKey = new WindowsNTKey();     
+            KeyWindowsNTReturn.setText(windowsNTKey.getWindowsNTKey());
+        }
+        
     }//GEN-LAST:event_GenereateWindowsNTActionPerformed
 
     private void Windows95ExplainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Windows95ExplainActionPerformed
@@ -362,6 +380,7 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JMenu MainMenu;
     private javax.swing.JMenuItem Windows95Explain;
     private javax.swing.JPanel Windows95Pane;
+    private javax.swing.JCheckBox Windows95RTM;
     private javax.swing.JMenuItem WindowsNTExplain;
     private javax.swing.JPanel WindowsNTPane;
     private javax.swing.JLabel jLabel1;
