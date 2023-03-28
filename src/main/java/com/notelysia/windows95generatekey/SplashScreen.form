@@ -72,12 +72,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="135" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="16" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Windows 95, NT 4.0, Office 95 Key Generator"/>
+            <Property name="text" type="java.lang.String" value="Windows 95, NT 4.0, Office 95 - 97 Key Generator"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">

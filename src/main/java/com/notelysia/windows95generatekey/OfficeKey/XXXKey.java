@@ -14,22 +14,16 @@
  *    limitations under the License.
  */
 
-package com.notelysia.windows95generatekey.WindowsRTM;
+package com.notelysia.windows95generatekey.OfficeKey;
 
+import com.notelysia.windows95generatekey.WindowsRTM.*;
+import java.util.Random;
 
-public class WindowsRTMKey {
-    String XXX95Key = new XXXKey().generateWin95Key();
-    String XXXNTKey = new XXXKey().generateWinNTKey();
-    String XXXXXXXKey = new XXXXXXXKey().generateWin95AndNTRTMKey();
-    String windows95RTMKey = XXX95Key + "-" + XXXXXXXKey;
-    String windowsNTRTMKey = XXXNTKey + "-" + XXXXXXXKey;
-    
-    public String getWindows95RTMKey() {
-        return windows95RTMKey;
+public class XXXKey {
+    //generates a random number with 3 digits
+    public String generateOffice95Key() {
+        Random rand = new Random();
+        int num = rand.nextInt(900) + 100;        
+        return String.valueOf(num);
     }
-
-    public String getWindowsNTRTMKey() {
-        return windowsNTRTMKey;
-    }
-    
 }

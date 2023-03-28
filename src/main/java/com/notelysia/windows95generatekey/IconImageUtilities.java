@@ -23,11 +23,23 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 
 public class IconImageUtilities {
-    public static void setIconImage(Window window)
+    public void setWindowsImage(Window window)
     {
         try
         {
             InputStream imageInputStream = window.getClass().getResourceAsStream("/icons8-windows-95-64.png");
+            BufferedImage bufferedImage = ImageIO.read(imageInputStream);
+            window.setIconImage(bufferedImage);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+    
+    public void setOfficeImage(Window window)
+    {
+        try
+        {
+            InputStream imageInputStream = window.getClass().getResourceAsStream("/office95-64.png");
             BufferedImage bufferedImage = ImageIO.read(imageInputStream);
             window.setIconImage(bufferedImage);
         } catch (IOException exception) {

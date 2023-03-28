@@ -7,7 +7,7 @@
     <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
-<h3 align="center", style="font-size:40px">Windows 95, Windows NT 4.0, Office 95 Key Generator</h3>
+<h3 align="center", style="font-size:40px">Windows 95, Windows NT 4.0, Office 95 - 97 Key Generator</h3>
 <p1 align="center", style="font-size:20px">This code is only for educational purposes</p1><br />
   <p2 align="center", style="font-size:20px">
     Piracy is not okay. Please buy the software you are using
@@ -29,9 +29,45 @@
 # **About The Project**
 
 This project will generate Windows 95, Windows NT 4.0 and Office 95 activation keys. The rules are based on the youtube channel [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) and this blog: [gurney.dev](https://gurney.dev/posts/mod7/)  provides. All icons use in project are from [icons8](https://icons8.com/).
+
+<style>
+* {
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+
+<div align="center" class="row">
+  <div class="column">
+
+  [![Product Name Screen Shot][product-screenshot]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
+
+  </div>
+  <div class="column">
+
+  [![Product Name Screen Shot][product-screenshot2]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
+
+  </div>
+
+</div>
+
 <div align="center">
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
+
 
 </div>
 
@@ -45,6 +81,7 @@ This project will generate Windows 95, Windows NT 4.0 and Office 95 activation k
 - Windows NT 4.0 OEM Key: XXXXX-OEM-XXXXXXX-XXXXX
 - Windows NT 4.0 Retail Key: XXX-XXXXXXX
 - Office 95 Key: XXX-XXXXXXX
+- Office 97 Key: XXXX-XXXXXXX
 
 ## **Windows 95 and Windows NT 4.0 OEM Key Rule**
 
@@ -67,7 +104,15 @@ starting with 333, 444, 555, ... 999 (Windows 95 and Windows NT 4.0 RTM)
 
 ## **Office 95 Key Rule**
 1. The sum of the last 7 characters is divisible by 7
-2. The last digit must not be 0, 8, 9
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## **Office 97 Key Rule**
+1. The sum of the last 7 characters is divisible by 7
+2. The first segment can be nearly anything from 0001 to 9991
+3. There are no banned numbers, but the last digit much be 3rd digit + 1 or 2.
+4. When the result of last digit is > 9, it overflows to 0 or 1 (return 0 or 1).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,3 +160,4 @@ starting with 333, 444, 555, ... 999 (Windows 95 and Windows NT 4.0 RTM)
 [twitter-shield]: https://img.shields.io/twitter/follow/MyWaifuis2DGirl?color=C9CBFF&label=%40MyWaifuis2DGirl&logo=TWITTER&logoColor=C9CBFF&style=for-the-badge
 [twitter-url]: https://twitter.com/MyWaifuis2DGirl
 [product-screenshot]: images/screenshot.png
+[product-screenshot2]: images/screenshot1.png

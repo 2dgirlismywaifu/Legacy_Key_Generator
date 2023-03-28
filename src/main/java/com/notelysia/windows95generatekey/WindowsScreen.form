@@ -9,12 +9,23 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="Office9597KeyGenerate">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/office95-24.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Office 95 - 97 Key Generator"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Office9597KeyGenerateActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Windows95Explain">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icons8-windows-95-24.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Windows 95 Explain Key"/>
+                <Property name="text" type="java.lang.String" value="Windows 95, Windows NT OEM Explain Key"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Windows95ExplainActionPerformed"/>
@@ -25,7 +36,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icons8-windows-95-24.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Windows NT 4.0 / Office 95 Explain Key"/>
+                <Property name="text" type="java.lang.String" value="Windows 95, Windows NT 4.0 RTM,  Office 95 Explain Key"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WindowsNTExplainActionPerformed"/>
@@ -125,7 +136,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Windows 95, Windows NT 4.0, Office 95 Generate Key"/>
+    <Property name="title" type="java.lang.String" value="Windows 95, Windows NT 4.0 Generate Key"/>
     <Property name="iconImages" type="java.util.List" editor="org.netbeans.modules.form.ComponentChooserEditor">
       <ComponentRef name="null"/>
     </Property>
@@ -343,7 +354,7 @@
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="WindowsRTM" min="-2" max="-2" attributes="0"/>
+                          <Component id="WindowsNTRTM" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -383,7 +394,7 @@
                       <Component id="GenereateWindowsRTM" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="WindowsRTM" min="-2" max="-2" attributes="0"/>
+                  <Component id="WindowsNTRTM" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
@@ -457,12 +468,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="KeyWindowsRTMExplainMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="WindowsRTM">
+        <Component class="javax.swing.JCheckBox" name="WindowsNTRTM">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Windows 95 and Windows  NT 4.0 RTM Key (NOT OEM KEY)"/>
+            <Property name="text" type="java.lang.String" value="Windows  NT 4.0 RTM Key (NOT OEM KEY)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">

@@ -14,24 +14,25 @@
  *    limitations under the License.
  */
 
-package com.notelysia.windows95generatekey.WindowsOEM;
+package com.notelysia.windows95generatekey.OfficeKey;
 
+import com.notelysia.windows95generatekey.WindowsRTM.*;
 import com.notelysia.windows95generatekey.IconImageUtilities;
 import com.notelysia.windows95generatekey.LookandFeel;
 
-public class WindowsOEMExplain extends javax.swing.JFrame {
+public class Office97Explain extends javax.swing.JFrame {
 
+    
     IconImageUtilities iconImageUtilities = new IconImageUtilities();
-    public WindowsOEMExplain() {
+    public Office97Explain() {
         initComponents();
         iconImageUtilities.setWindowsImage(this);
         String text = "<html>";
-        text += "Windows 95 and Windows NT 4.0 OEM Key Format: XXXYY-OEM-NNSSSSS-ZZZZZ<br>"; 
-        text += "1. XXX: starting from 001 - 366<br>";
-        text += "2. YY: starts with 95 - 03 (1995-2003)<br>";
-        text += "3. N: always 0<br>";
-        text += "4. SSSSSS: random number, sum of digits in it is divisible by 7<br>";
-        text += "5. ZZZZZ: random number<br>";
+        text += "Office 97 Key Format: XXXX-XXXXXXX<br>";
+        text += "1. The sum of the last 7 characters is divisible by 7<br>";       
+        text += "2. The first segment can be nearly anything from 0001 to 9991.<br> "
+                + "There are no banned numbers, but the last digit much be 3rd digit + 1 or 2.<br> "
+                + "When the result is > 9, it overflows to 0 or 1.<br>";
         TextExplain.setText(text);
     }
 
@@ -44,13 +45,13 @@ public class WindowsOEMExplain extends javax.swing.JFrame {
         TextExplain = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Windows 95 Explain");
+        setTitle("Windows NT 4.0/Office 95 Explain");
         setResizable(false);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-windows-95-64.png"))); // NOI18N
-        jLabel2.setText("Windows 95, Windows NT 4.0 OEM Explain Key");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/office95-64.png"))); // NOI18N
+        jLabel2.setText("Microsoft Office 97 Key Explain");
 
         TextExplain.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         TextExplain.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,8 +75,8 @@ public class WindowsOEMExplain extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(TextExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(TextExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,8 +92,8 @@ public class WindowsOEMExplain extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -109,7 +110,7 @@ public class WindowsOEMExplain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WindowsOEMExplain().setVisible(true);
+                new Office97Explain().setVisible(true);
             }
         });
     }

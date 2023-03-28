@@ -14,16 +14,17 @@
  *    limitations under the License.
  */
 
-package com.notelysia.windows95generatekey.WindowsRTM;
+package com.notelysia.windows95generatekey.OfficeKey;
 
+import com.notelysia.windows95generatekey.OfficeKey.*;
 
-public class Office95 {
-    String XXXKey = new XXXKey().generateKey();
+public class Office97 {
+    String XXXXKey = new XXXXKey().generateOffice97Key();
     String XXXXXXXKey = new XXXXXXXKey().generateKey();
-    String office95Key = XXXKey + "-" + XXXXXXXKey;
-    
-    public String getWindowsNTKey() {
-        return office95Key;
+    String office97Key = XXXXKey + "-" + XXXXXXXKey;
+
+    public String getOffice97Key() {
+        return office97Key;
     }
     
 }

@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.notelysia</groupId>
     <artifactId>Windows95GenerateKey</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,5 +84,5 @@
             <version>2.19.0</version>
         </dependency>
     </dependencies>
-    <name>Windows 95, NT 4.0, Office 95 Key Generator</name>
+    <name>Windows 95, NT 4.0, Office 95 - 97 Key Generator</name>
 </project>

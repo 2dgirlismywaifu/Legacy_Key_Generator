@@ -20,9 +20,8 @@ import com.notelysia.windows95generatekey.WindowsRTM.WindowsRTMExplain;
 import com.notelysia.windows95generatekey.WindowsOEM.WindowsOEMExplain;
 import com.notelysia.windows95generatekey.WindowsOEM.WindowsOEMKey;
 import com.notelysia.windows95generatekey.WindowsRTM.WindowsRTMKey;
-import com.notelysia.windows95generatekey.WindowsRTM.Office95;
 
-public class MainScreen extends javax.swing.JFrame {
+public class WindowsScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form MainScreen
@@ -31,11 +30,11 @@ public class MainScreen extends javax.swing.JFrame {
     WindowsOEMKey windowsOEMKey;
     WindowsRTMKey windowsRTMKey;
     WindowsRTMExplain windowsNTExplain;
-    Office95 office95Key;
     SetTheme setTheme;
-    public MainScreen() {
+    IconImageUtilities iconImageUtilities = new IconImageUtilities();
+    public WindowsScreen() {
         initComponents();
-        IconImageUtilities.setIconImage(this);
+        iconImageUtilities.setWindowsImage(this);
         DefaultContextMenu.addDefaultContextMenu(WindowsOEMReturn);
         DefaultContextMenu.addDefaultContextMenu(WindowsRTMReturn);
     }
@@ -60,10 +59,11 @@ public class MainScreen extends javax.swing.JFrame {
         WindowsRTMReturn = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         KeyWindowsRTMExplain = new javax.swing.JLabel();
-        WindowsRTM = new javax.swing.JCheckBox();
+        WindowsNTRTM = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MainMenu = new javax.swing.JMenu();
+        Office9597KeyGenerate = new javax.swing.JMenuItem();
         Windows95Explain = new javax.swing.JMenuItem();
         WindowsNTExplain = new javax.swing.JMenuItem();
         ExitProgram = new javax.swing.JMenuItem();
@@ -78,7 +78,7 @@ public class MainScreen extends javax.swing.JFrame {
         AboutProgram = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Windows 95, Windows NT 4.0, Office 95 Generate Key");
+        setTitle("Windows 95, Windows NT 4.0 Generate Key");
         setIconImages(null);
         setResizable(false);
 
@@ -203,8 +203,8 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        WindowsRTM.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        WindowsRTM.setText("Windows 95 and Windows  NT 4.0 RTM Key (NOT OEM KEY)");
+        WindowsNTRTM.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        WindowsNTRTM.setText("Windows  NT 4.0 RTM Key (NOT OEM KEY)");
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel8.setText("Format: XXX-XXXXXXX");
@@ -225,7 +225,7 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(WindowsNTPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(WindowsNTPaneLayout.createSequentialGroup()
-                        .addComponent(WindowsRTM)
+                        .addComponent(WindowsNTRTM)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(WindowsNTPaneLayout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -255,7 +255,7 @@ public class MainScreen extends javax.swing.JFrame {
                     .addComponent(WindowsRTMReturn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GenereateWindowsRTM))
                 .addGap(18, 18, 18)
-                .addComponent(WindowsRTM)
+                .addComponent(WindowsNTRTM)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(WindowsNTPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WindowsNTPaneLayout.createSequentialGroup()
@@ -268,8 +268,17 @@ public class MainScreen extends javax.swing.JFrame {
 
         MainMenu.setText("File");
 
+        Office9597KeyGenerate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/office95-24.png"))); // NOI18N
+        Office9597KeyGenerate.setText("Office 95 - 97 Key Generator");
+        Office9597KeyGenerate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Office9597KeyGenerateActionPerformed(evt);
+            }
+        });
+        MainMenu.add(Office9597KeyGenerate);
+
         Windows95Explain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-windows-95-24.png"))); // NOI18N
-        Windows95Explain.setText("Windows 95 Explain Key");
+        Windows95Explain.setText("Windows 95, Windows NT OEM Explain Key");
         Windows95Explain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Windows95ExplainActionPerformed(evt);
@@ -278,7 +287,7 @@ public class MainScreen extends javax.swing.JFrame {
         MainMenu.add(Windows95Explain);
 
         WindowsNTExplain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-windows-95-24.png"))); // NOI18N
-        WindowsNTExplain.setText("Windows NT 4.0 / Office 95 Explain Key");
+        WindowsNTExplain.setText("Windows 95, Windows NT 4.0 RTM,  Office 95 Explain Key");
         WindowsNTExplain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WindowsNTExplainActionPerformed(evt);
@@ -402,13 +411,12 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void GenereateWindowsRTMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenereateWindowsRTMActionPerformed
         // TODO add your handling code here:
-        if (WindowsRTM.isSelected()) {
-            windowsRTMKey = new WindowsRTMKey();
-            WindowsRTMReturn.setText(windowsRTMKey.getWindows95RTMKey());
+        windowsRTMKey = new WindowsRTMKey();
+        if (WindowsNTRTM.isSelected()) {                      
+            WindowsRTMReturn.setText(windowsRTMKey.getWindowsNTRTMKey());
         }
         else {
-            office95Key = new Office95();     
-            WindowsRTMReturn.setText(office95Key.getWindowsNTKey());
+            WindowsRTMReturn.setText(windowsRTMKey.getWindows95RTMKey());
         }
         
     }//GEN-LAST:event_GenereateWindowsRTMActionPerformed
@@ -494,6 +502,15 @@ public class MainScreen extends javax.swing.JFrame {
         setTheme = new SetTheme();
         setTheme.FlatLafTheme("cupertinoDark");
     }//GEN-LAST:event_macOSDarkActionPerformed
+
+    private void Office9597KeyGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Office9597KeyGenerateActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        OfficeScreen frame = new OfficeScreen();    
+        frame.setVisible(true);
+        frame.setTitle("Office 95 - 97 Generate Key");
+        frame.setResizable(false);
+    }//GEN-LAST:event_Office9597KeyGenerateActionPerformed
     //////////////////////////////////////////////////////////////////////////////
     /**
      * @param args the command line arguments
@@ -506,7 +523,7 @@ public class MainScreen extends javax.swing.JFrame {
             public void run() {
                 
               
-                new MainScreen().setVisible(true);
+                new WindowsScreen().setVisible(true);
             }
         });
     }
@@ -525,13 +542,14 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JLabel KeyWindowsOEMExplain;
     private javax.swing.JLabel KeyWindowsRTMExplain;
     private javax.swing.JMenu MainMenu;
+    private javax.swing.JMenuItem Office9597KeyGenerate;
     private javax.swing.JMenuItem Windows95Explain;
     private javax.swing.JPanel Windows95Pane;
     private javax.swing.JCheckBox WindowsNT4Key;
     private javax.swing.JMenuItem WindowsNTExplain;
     private javax.swing.JPanel WindowsNTPane;
+    private javax.swing.JCheckBox WindowsNTRTM;
     private javax.swing.JTextField WindowsOEMReturn;
-    private javax.swing.JCheckBox WindowsRTM;
     private javax.swing.JTextField WindowsRTMReturn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

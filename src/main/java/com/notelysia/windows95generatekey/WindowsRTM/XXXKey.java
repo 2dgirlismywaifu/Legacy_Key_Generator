@@ -21,7 +21,7 @@ import java.util.Random;
 public class XXXKey {
     //generates a random number with 3 digits
     //if it is Windows 95 and Windows NT 4.0 RTM key, 333, 444, 555, 666, 777, 888, 999 is NOT ALLOW
-    public String generateKey() {
+    public String generateWin95Key() {
         Random rand = new Random();
         int num = rand.nextInt(900) + 100;
          while (num == 333 || 
@@ -35,10 +35,13 @@ public class XXXKey {
         }
         return String.valueOf(num);
     }
-    
-    public String generateOffice95Key() {
+    //if it is Windows NT 4.0 RTM key, start from 000 to 998
+    public String generateWinNTKey() {
         Random rand = new Random();
-        int num = rand.nextInt(900) + 100;        
+        int num = rand.nextInt(998);
+        while (num == 333 || num == 444 || num == 555 || num == 777 || num == 888 || num == 999) {
+            num = rand.nextInt(998);
+        }       
         return String.valueOf(num);
     }
 }

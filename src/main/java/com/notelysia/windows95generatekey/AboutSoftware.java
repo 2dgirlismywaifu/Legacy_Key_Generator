@@ -24,12 +24,12 @@ import java.net.URISyntaxException;
 
 public class AboutSoftware extends javax.swing.JFrame {
     
-    //log4j
+    IconImageUtilities iconImageUtilities = new IconImageUtilities();
     
     GithubProfile profileLink = new GithubProfile();
     public AboutSoftware() {
         initComponents();
-        IconImageUtilities.setIconImage(this);
+        iconImageUtilities.setWindowsImage(this);
         firstGithub.setText("<html> <a href=\"\">"+ profileLink.getTwodgirlsismywaifu() +"</a></html>");       
     }
 
@@ -73,7 +73,7 @@ public class AboutSoftware extends javax.swing.JFrame {
         imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2dgirlismywaifu.jpg"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel3.setText("Windows 95, NT 4.0, Office 95 Key Generator");
+        jLabel3.setText("Windows 95, NT 4.0, Office 95 - 97 Key Generator");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setText("This code is only for educational purposes");

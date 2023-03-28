@@ -19,11 +19,11 @@ package com.notelysia.windows95generatekey;
 import java.awt.geom.RoundRectangle2D;
 
 public class SplashScreen extends javax.swing.JFrame {
-
+    IconImageUtilities iconImageUtilities = new IconImageUtilities();
     /** Creates new form SplashScreen */
     public SplashScreen() {
         initComponents();
-        IconImageUtilities.setIconImage(this);
+        iconImageUtilities.setWindowsImage(this);
     }
 
     /** This method is called from within the constructor to
@@ -56,7 +56,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(548, 135));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel5.setText("Windows 95, NT 4.0, Office 95 Key Generator");
+        jLabel5.setText("Windows 95, NT 4.0, Office 95 - 97 Key Generator");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel6.setText("This code is only for educational purposes");
@@ -86,7 +86,7 @@ public class SplashScreen extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(38, 38, 38)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
@@ -125,7 +125,7 @@ public class SplashScreen extends javax.swing.JFrame {
                     Thread.sleep(10);
                     if (i == 100) {
                         sp.dispose();
-                        MainScreen.main();
+                        WindowsScreen.main();
                     }
                 }
             } catch (InterruptedException ex) {
