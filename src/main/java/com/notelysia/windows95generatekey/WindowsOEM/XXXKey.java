@@ -14,24 +14,18 @@
  *    limitations under the License.
  */
 
-package com.notelysia.windows95generatekey;
+package com.notelysia.windows95generatekey.WindowsOEM;
 
-import java.awt.Window;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
-import javax.imageio.ImageIO;
-
-public class IconImageUtilities {
-    public static void setIconImage(Window window)
-    {
-        try
-        {
-            InputStream imageInputStream = window.getClass().getResourceAsStream("/icons8-windows-95-64.png");
-            BufferedImage bufferedImage = ImageIO.read(imageInputStream);
-            window.setIconImage(bufferedImage);
-        } catch (IOException exception) {
-            exception.printStackTrace();
+public class XXXKey {
+    //Generate random number with 3 digits. Start from 001 to 366
+    public String generateKey() {
+        int random = (int) (Math.random() * 366) + 1;
+        String key = String.valueOf(random);
+        if (key.length() == 1) {
+            key = "00" + key;
+        } else if (key.length() == 2) {
+            key = "0" + key;
         }
+        return key;
     }
 }

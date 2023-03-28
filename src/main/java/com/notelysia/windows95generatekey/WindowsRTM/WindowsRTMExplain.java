@@ -1,24 +1,39 @@
+/*
+ * Copyright By @2dgirlismywaifu (2023)
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *           http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
 
-package com.notelysia.windows95generatekey.Windows95;
+package com.notelysia.windows95generatekey.WindowsRTM;
 
 import com.notelysia.windows95generatekey.IconImageUtilities;
 import com.notelysia.windows95generatekey.LookandFeel;
 
-public class Windows95Explain extends javax.swing.JFrame {
+public class WindowsRTMExplain extends javax.swing.JFrame {
 
     /**
      * Creates new form Windows95Explain
      */
-    public Windows95Explain() {
+    public WindowsRTMExplain() {
         initComponents();
         IconImageUtilities.setIconImage(this);
         String text = "<html>";
-        text += "Windows 95 OEM Key Format: XXXYY-OEM-NNSSSSS-ZZZZZ<br>"; //<br>: xuống dòng
-        text += "1. XXX: starting from 001 - 366<br>";
-        text += "2. YY: starts with 95 - 03 (1995-2003)<br>";
-        text += "3. N: always 0<br>";
-        text += "4. SSSSSS: random number, sum of digits in it is divisible by 7<br>";
-        text += "5. ZZZZZ: random number<br>";
+        text += "Windows 95, Windows NT 4.0, Office 95<br>";
+        text += "Key Format: XXX-XXXXXXX<br>";
+        text += "1. The sum of the last 7 characters is divisible by 7<br>";
+        text += "2. First three characters XXX reject keys<br>";
+        text += "starting with 333, 444, 555, ... 999 (Windows 95 and Windows NT 4.0 RTM)<br>";
+        text += "3. The last digit must not be 0, 8, 9 <br>";
         TextExplain.setText(text);
     }
 
@@ -31,13 +46,13 @@ public class Windows95Explain extends javax.swing.JFrame {
         TextExplain = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Windows 95 Explain");
+        setTitle("Windows NT 4.0/Office 95 Explain");
         setResizable(false);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-windows-95-64.png"))); // NOI18N
-        jLabel2.setText("Windows 95 OEM Explain Key");
+        jLabel2.setText("Windows 95 RTM, Windows NT 4.0, Office 95 Key Explain");
 
         TextExplain.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         TextExplain.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -49,10 +64,10 @@ public class Windows95Explain extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextExplain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+                    .addComponent(TextExplain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -61,8 +76,8 @@ public class Windows95Explain extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TextExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
+                .addComponent(TextExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -78,8 +93,8 @@ public class Windows95Explain extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -96,7 +111,7 @@ public class Windows95Explain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Windows95Explain().setVisible(true);
+                new WindowsRTMExplain().setVisible(true);
             }
         });
     }
