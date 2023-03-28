@@ -30,38 +30,17 @@
 
 This project will generate Windows 95, Windows NT 4.0 and Office 95 activation keys. The rules are based on the youtube channel [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) and this blog: [gurney.dev](https://gurney.dev/posts/mod7/)  provides. All icons use in project are from [icons8](https://icons8.com/).
 
-<style>
-* {
-  box-sizing: border-box;
-  align-items: center;
-}
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-</style>
 
 
-<div align="center" class="row">
-  <div class="column">
 
-  [![Product Name Screen Shot][product-screenshot]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
+<div align="center" >
 
-  </div>
-  <div class="column">
+Windows 95 and Windows NT 4.0             |  Microsoft Office 95 - 97
+:-------------------------:|:-------------------------:
+[![Product Name Screen Shot][product-screenshot]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)  | [![Product Name Screen Shot][product-screenshot2]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
 
-  [![Product Name Screen Shot][product-screenshot2]](https://github.com/2dgirlismywaifu/Windows95_WindowsNT_Key)
 
-  </div>
+
 
 </div>
 
