@@ -33,7 +33,7 @@ public class XXXKey {
                  num == 999) {
             num = rand.nextInt(900) + 100;
         }
-        return String.valueOf(num);
+        return String.valueOf(String.format("%03d", num));
     }
     //if it is Windows NT 4.0 RTM key, start from 000 to 998
     public String generateWinNTKey() {
@@ -42,6 +42,6 @@ public class XXXKey {
         while (num == 333 || num == 444 || num == 555 || num == 777 || num == 888 || num == 999) {
             num = rand.nextInt(998);
         }       
-        return String.valueOf(num);
+        return String.valueOf(String.format("%03d", num));
     }
 }
