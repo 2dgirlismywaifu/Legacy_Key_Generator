@@ -157,12 +157,11 @@ public class OfficeScreen extends javax.swing.JFrame {
                 .addGroup(Office95PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Office95PaneLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Office95PaneLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Office95ExplainMouse)
-                        .addGap(49, 49, 49))))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Office95PaneLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(Office95ExplainMouse)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -247,7 +246,7 @@ public class OfficeScreen extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Office97PaneLayout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         MainMenu.setText("File");
