@@ -162,7 +162,7 @@ public class OfficeScreen extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Office95PaneLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Office95ExplainMouse)
-                        .addGap(39, 39, 39))))
+                        .addGap(49, 49, 49))))
         );
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
