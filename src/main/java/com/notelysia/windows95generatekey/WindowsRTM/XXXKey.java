@@ -39,7 +39,7 @@ public class XXXKey {
     public String generateWinNTKey() {
         Random rand = new Random();
         int num = rand.nextInt(998);
-        while (num == 333 || num == 444 || num == 555 || num == 777 || num == 888 || num == 999) {
+        while (num == 333 || num == 444 || num == 555 || num == 777 || num == 888) {
             num = rand.nextInt(998);
         }       
         return String.valueOf(String.format("%03d", num));

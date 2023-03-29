@@ -22,8 +22,7 @@ public class ZZZZZKey {
     //Generate random number with 5 digits
     public String generateKey() {
         Random rnd = new Random();
-        int number = rnd.nextInt(99999);
-        String ZZZZZKeyReturn = String.format("%05d", number);
-        return ZZZZZKeyReturn;
+        int number = rnd.nextInt(99999) + 1;
+        return String.format("%05d", number);
     }
 }

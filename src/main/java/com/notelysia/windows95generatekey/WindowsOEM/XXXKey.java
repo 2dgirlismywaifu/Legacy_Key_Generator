@@ -16,16 +16,14 @@
 
 package com.notelysia.windows95generatekey.WindowsOEM;
 
+import java.util.Random;
+
 public class XXXKey {
     //Generate random number with 3 digits. Start from 001 to 366
     public String generateKey() {
-        int random = (int) (Math.random() * 366) + 1;
-        String key = String.valueOf(random);
-        if (key.length() == 1) {
-            key = "00" + key;
-        } else if (key.length() == 2) {
-            key = "0" + key;
-        }
-        return key;
+        Random rand = new Random();
+        int upperbound = 366;
+        int int_random = rand.nextInt(upperbound) + 1;
+        return String.format("%03d", int_random);      
     }
 }

@@ -20,34 +20,19 @@ import java.util.Random;
 
 public class YYKey {
     //Generate random number with 2 digits. Start from 95 to 03 (last key must not be 03 in Windows 95)
-    public String generateWin95Key() {
-        int[] arr = {95, 96, 97, 98, 99, 0, 1, 2, };
-        Random rand = new Random();
-        int randomNum = arr[rand.nextInt(arr.length)];
-        String result;
-        if (randomNum == 0) {
-          result = "00";
-        } else {
-          result = String.valueOf(randomNum);
-          if (result.length() == 1) {
-            result = "0" + result;
-          }
-        }
-        return result;
+    Random rand = new Random();
+    public String generateWin95Key() {       
+        int win95year = rand.nextInt(9) + 1995;       
+        int thirdDigit = (win95year / 10) % 10;
+        int fourthDigit = win95year % 10;
+        int newNumber = thirdDigit * 10 + fourthDigit;        
+        return String.format("%02d", newNumber);
     }
     public String generateWinNTKey() {
-        int[] arr = {95, 96, 97, 98, 99, 0, 1, 2, 3};
-        Random rand = new Random();
-        int randomNum = arr[rand.nextInt(arr.length)];
-        String result;
-        if (randomNum == 0) {
-          result = "00";
-        } else {
-          result = String.valueOf(randomNum);
-          if (result.length() == 1) {
-            result = "0" + result;
-          }
-        }
-        return result;
+        int winntyear = rand.nextInt(8) + 1995;        
+        int thirdDigit = (winntyear / 10) % 10;
+        int fourthDigit = winntyear % 10;
+        int newNumber = thirdDigit * 10 + fourthDigit;        
+        return String.format("%02d", newNumber);
     }
 }

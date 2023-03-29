@@ -21,14 +21,12 @@ import com.notelysia.windows95generatekey.WindowsRTM.*;
 import java.util.Random;
 
 public class XXXXXXXKey {
-    //Generate random number with 7 digits. Sum of digits in it is divisible by 7. 
-    //The last digit must not be 0, 8 and 9.
+    //Generate random number with 7 digits. Sum of digits in it is divisible by 7.    
        
     public String generateKey() {
         Random rand = new Random();
         int num = rand.nextInt(9000000) + 1000000;
-        while ((num % 10 == 0 || num % 10 == 8 || num % 10 == 9) ||
-                sumOfDigits(num) % 7 != 0) {
+        while (sumOfDigits(num) % 7 != 0) {
             num = rand.nextInt(9000000) + 1000000;
         }      
         return String.valueOf(num);
