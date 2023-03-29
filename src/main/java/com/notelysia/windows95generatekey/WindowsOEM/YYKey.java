@@ -22,14 +22,14 @@ public class YYKey {
     //Generate random number with 2 digits. Start from 95 to 03 (last key must not be 03 in Windows 95)
     Random rand = new Random();
     public String generateWin95Key() {       
-        int win95year = rand.nextInt(9) + 1995;       
+        int win95year = rand.nextInt(8) + 1995;       
         int thirdDigit = (win95year / 10) % 10;
         int fourthDigit = win95year % 10;
         int newNumber = thirdDigit * 10 + fourthDigit;        
         return String.format("%02d", newNumber);
     }
     public String generateWinNTKey() {
-        int winntyear = rand.nextInt(8) + 1995;        
+        int winntyear = rand.nextInt(9) + 1995;        
         int thirdDigit = (winntyear / 10) % 10;
         int fourthDigit = winntyear % 10;
         int newNumber = thirdDigit * 10 + fourthDigit;        
