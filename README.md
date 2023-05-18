@@ -116,8 +116,8 @@ starting with 333, 444, 555, ... 999 (Windows 95 and Windows NT 4.0 RTM)
 
 <!-- Inspiration/Credits -->
 # **Inspiration/Credits**
-- [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) - article about "Examining the Microsoft mod7 product key algorithm"
-- [gurney.dev](https://gurney.dev/posts/mod7/) - Video about Windows 95 Key Generator
+- [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) - Video about Windows 95 Key Generator
+- [gurney.dev](https://gurney.dev/posts/mod7/) - Article about "Examining the Microsoft mod7 product key algorithm"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
