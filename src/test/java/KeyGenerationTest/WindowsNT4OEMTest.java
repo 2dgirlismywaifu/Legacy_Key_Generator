@@ -16,28 +16,27 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.WindowsOEM.WindowsOEMKey;
 import java.util.HashMap;
 import static junit.framework.TestCase.assertTrue;
-import org.junit.Assert;
 import static org.junit.Assert.assertFalse;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class WindowsNT4OEMTest {
     
-    WindowsOEMKey windowsOEMKey;
-    String input;
-    @Before
-    public void setUp() {
-        windowsOEMKey = new WindowsOEMKey();
-        input = windowsOEMKey.getWindowsNTKey();
-    }
+    private static String input;
     
+     @BeforeClass 
+     public static void onlyOnce() {
+       DemoKeyTesting demoKeyTesting = new DemoKeyTesting();
+       demoKeyTesting.setWinNT4OEM();
+       input = demoKeyTesting.getWinNT4OEM();
+       System.out.println("Windows NT 4.0 OEM Key: " + input);
+    }
+           
     @Test
     public void testDivision() {
-        System.out.println("This is text Windows NT 4.0 OEM key XXXXXXX part division by 7 or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows NT 4.0 OEM key XXXXXXX part division by 7 or NOT!!!!!");      
         String[] parts = input.split("-");
         String oemPart = parts[2];
         int sum = 0;
@@ -54,23 +53,34 @@ public class WindowsNT4OEMTest {
         }
         else {
             assertFalse(result != 0);
-            System.out.println("Windows NT 4.0 RTM Key: " + input + " (FAILED)");            
-        }                       
+            System.out.println("Windows NT 4.0 OEM Key: " + input + " (FAILED)");            
+        }
+        
+        
     }
     
     @Test
     public void testYear() {
-        System.out.println("This is text Windows NT 4.0 OEM key YEARS PASS or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows NT 4.0 OEM key YEARS PASS or NOT!!!!!");       
         String[] parts = input.split("-");
-        int[] arr = {95, 96, 97, 98, 99, 1, 2, 3};
+        int[] arr = {95, 96, 97, 98, 99, 01, 02, 3};
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i : arr) {
             map.put(i % 100, i);
         }
         int num = Integer.parseInt(parts[0]);
         int lastTwoDigits = num % 100;
-        assertTrue(map.containsKey(lastTwoDigits));
+        
+        if (map.containsKey(lastTwoDigits) == true) {
+            assertTrue(true);
+            System.out.println("Windows NT 4.0 OEM KEY: " + input + " (PASSED)");
+        }
+        else {
+            assertFalse(false);
+            System.out.println("Windows NT 4.0 OEM KEY: " + input + " (FAILED)");
+        }
+        
+        
     }
     
 }

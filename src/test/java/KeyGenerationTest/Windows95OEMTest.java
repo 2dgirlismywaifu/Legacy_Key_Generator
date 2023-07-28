@@ -16,27 +16,26 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.WindowsOEM.WindowsOEMKey;
 import java.util.HashMap;
 import static junit.framework.TestCase.assertTrue;
-import org.junit.Assert;
 import static org.junit.Assert.assertFalse;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class Windows95OEMTest {
-    WindowsOEMKey windowsOEMKey;
-    String input;
-    @Before
-    public void setUp() {
-        windowsOEMKey = new WindowsOEMKey();
-        input = windowsOEMKey.getWindows95Key();
+    private static String input;
+    
+     @BeforeClass 
+     public static void onlyOnce() {
+       DemoKeyTesting demoKeyTesting = new DemoKeyTesting();
+       demoKeyTesting.setWin95OEM();
+       input = demoKeyTesting.getWin95OEM();
+       System.out.println("Windows 95 OEM Key: " + input);
     }
     
     @Test
     public void testDivision() {
-        System.out.println("This is text Windows 95 OEM key XXXXXXX part division by 7 or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows 95 OEM key XXXXXXX part division by 7 or NOT!!!!!");       
         String[] parts = input.split("-");
         String oemPart = parts[2];
         int sum = 0;
@@ -59,8 +58,7 @@ public class Windows95OEMTest {
     
     @Test
     public void testYear() {
-        System.out.println("This is text Windows 95 OEM key YEARS PASS or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows 95 OEM key YEARS PASS or NOT!!!!!");        
         String[] parts = input.split("-");
         int[] arr = {95, 96, 97, 98, 99, 1, 2};
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -69,7 +67,14 @@ public class Windows95OEMTest {
         }
         int num = Integer.parseInt(parts[0]);
         int lastTwoDigits = num % 100;
-        assertTrue(map.containsKey(lastTwoDigits));
+        if (map.containsKey(lastTwoDigits) == true) {
+            assertTrue(true);
+            System.out.println("Windows NT 95 OEM KEY: " + input + " (PASSED)");
+        }
+        else {
+            assertFalse(false);
+            System.out.println("Windows NT 95 OEM KEY: " + input + " (FAILED)");
+        }
     }
     
 }

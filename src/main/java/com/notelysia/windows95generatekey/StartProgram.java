@@ -16,13 +16,14 @@
 
 package com.notelysia.windows95generatekey;
 
-public class StartProgram {
+public class StartProgram {     
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SplashScreen.main();
+        SplashScreen splashScreen = new SplashScreen();
+        splashScreen.main();
     }
     
 }

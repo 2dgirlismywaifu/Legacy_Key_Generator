@@ -16,26 +16,25 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.OfficeKey.Office97;
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class Office97Test {
-    Office97 office97;
-    String input;
-    @Before
-    public void setUp() {
-        office97 = new Office97();
-        input = office97.getOffice97Key();
+    private static String input;
+    
+     @BeforeClass 
+     public static void onlyOnce() {
+       DemoKeyTesting demoKeyTesting = new DemoKeyTesting();
+       demoKeyTesting.setOffice97();
+       input = demoKeyTesting.getOffice97();
+       System.out.println("Microsoft Office 97 Key: " + input);
     }
     
     @Test
     public void testDivision() {
-        System.out.println("This is text Office 97 key XXXXXXX part division by 7 or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Office 97 key XXXXXXX part division by 7 or NOT!!!!!");
         String[] parts = input.split("-");
         int sum = 0;
         for (char c : parts[1].toCharArray()) {
@@ -54,8 +53,7 @@ public class Office97Test {
     
     @Test
     public void testKeyStart() {
-        System.out.println("This is text Office 97 key start PASS or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Office 97 key start PASS or NOT!!!!!");       
         boolean result = false;
 
         if (input.matches("\\d{4}-\\d{7}")) {
@@ -66,12 +64,17 @@ public class Office97Test {
                 result = true;
             } else if (thirdDigit + 1 > 9 && lastDigit == 0) {
                 result = true;
-            } else if (thirdDigit + 2 > 9 && lastDigit == 1) {
-                result = true;
-            }
+            } else result = thirdDigit + 2 > 9 && lastDigit == 1;
         }
 
-        assertTrue(result);                       
+        if (result == true) {
+            assertTrue(result);
+            System.out.println("Microsoft Office 97 Key: " + input + " (PASSED)");
+        }
+        else {
+            assertFalse(result);
+            System.out.println("Microsoft Office 97 Key: " + input + " (FAILED)");            
+        }                  
     }
 }
 

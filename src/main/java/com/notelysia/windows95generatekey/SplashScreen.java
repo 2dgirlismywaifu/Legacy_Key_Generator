@@ -17,9 +17,19 @@
 package com.notelysia.windows95generatekey;
 
 import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SplashScreen extends javax.swing.JFrame {
+    
+    //log4j
+    private final static Logger logger = LogManager.getLogger(SplashScreen.class);
+    
     IconImageUtilities iconImageUtilities = new IconImageUtilities();
+    SaveImageFromURL saveImageFromURL;
+    
     /** Creates new form SplashScreen */
     public SplashScreen() {
         initComponents();
@@ -115,15 +125,30 @@ public class SplashScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    public static void main() {
+    
+    private void GithubAvatarDownload (String imageUrl, String destinationFile) {
+        try {
+            saveImageFromURL = new SaveImageFromURL(imageUrl,destinationFile);
+            saveImageFromURL.crtDir();
+            saveImageFromURL.saveImage();
+        } catch (IOException ex) {
+            logger.error("Exceptions happen: " + ex, ex);
+            JOptionPane.showMessageDialog(null, ex, "Something went wrong", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void main() {
         LookandFeel.setTheme();
         SplashScreen sp = new SplashScreen();
             sp.setVisible(true);
             try {
                 for (int i = 0; i<=100; i++) {
                     Thread.sleep(10);
-                    if (i == 100) {
+                    if (i == 10) {
+                        //Save image github avatar
+                        GithubAvatarDownload("https://avatars.githubusercontent.com/u/59259855?v=4", "2dgirlismywaifu.jpg");
+                    }
+                    else if (i == 100) {
                         sp.dispose();
                         WindowsScreen.main();
                     }

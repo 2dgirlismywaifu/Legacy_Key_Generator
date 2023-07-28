@@ -16,25 +16,25 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.OfficeKey.Office95;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class Office95Test {
-    Office95 office95;
-    String input;
-    @Before
-    public void setUp() {
-        office95 = new Office95();
-        input = office95.getOffice95Key();
+    private static String input;
+    
+     @BeforeClass 
+     public static void onlyOnce() {
+       DemoKeyTesting demoKeyTesting = new DemoKeyTesting();
+       demoKeyTesting.setOffice95();
+       input = demoKeyTesting.getOffice95();
+       System.out.println("Microsoft Office 95 Key: " + input);
     }
     
     @Test
     public void testDivision() {
-        System.out.println("This is text Office 95 key XXXXXXX part division by 7 or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Office 95 key XXXXXXX part division by 7 or NOT!!!!!");     
         String[] parts = input.split("-");
         int sum = 0;
         for (char c : parts[1].toCharArray()) {

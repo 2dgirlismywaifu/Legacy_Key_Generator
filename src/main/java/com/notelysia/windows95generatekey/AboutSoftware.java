@@ -18,21 +18,53 @@ package com.notelysia.windows95generatekey;
 
 import java.awt.Cursor;
 import java.awt.Desktop;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class AboutSoftware extends javax.swing.JFrame {
     
+    //log4j
+    private final static Logger logger = LogManager.getLogger(AboutSoftware.class);
+    
     IconImageUtilities iconImageUtilities = new IconImageUtilities();
+    Thread githubImage;
+    
     
     GithubProfile profileLink = new GithubProfile();
     public AboutSoftware() {
         initComponents();
         iconImageUtilities.setWindowsImage(this);
-        firstGithub.setText("<html> <a href=\"\">"+ profileLink.getTwodgirlsismywaifu() +"</a></html>");       
+        firstGithub.setText("<html> <a href=\"\">"+ profileLink.getTwodgirlsismywaifu() +"</a></html>");
+        //Now get image github from url
+        GitHubAvaterAccount(new File("github_avatar/2dgirlismywaifu.jpg"));
+        
     }
-
+    
+    private void GitHubAvaterAccount (File file) {
+        githubImage = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    BufferedImage bufferedImage = ImageIO.read(file);
+                    ImageIcon icon  = new ImageIcon(bufferedImage);
+                    GithubAvatar.setIcon(icon);
+                } catch (IOException ex) {
+                    logger.error("Exceptions happen: " + ex, ex);
+                    JOptionPane.showMessageDialog(null, ex, "Something went wrong", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        };
+        githubImage.start();
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -41,7 +73,7 @@ public class AboutSoftware extends javax.swing.JFrame {
         firstGithub = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        imageAvatar1 = new com.notelysia.windows95generatekey.ImageAvatar();
+        GithubAvatar = new com.notelysia.windows95generatekey.ImageAvatar();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -70,8 +102,6 @@ public class AboutSoftware extends javax.swing.JFrame {
         jLabel4.setName(""); // NOI18N
         jLabel4.setPreferredSize(new java.awt.Dimension(548, 135));
 
-        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2dgirlismywaifu.jpg"))); // NOI18N
-
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel3.setText("Windows 95, NT 4.0, Office 95 - 97 Key Generator");
 
@@ -85,40 +115,41 @@ public class AboutSoftware extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstGithub)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel10))
-                .addGap(106, 106, 106))
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(GithubAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(firstGithub)
+                                    .addComponent(jLabel2)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))))
                 .addContainerGap(104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GithubAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(15, 15, 15)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(firstGithub)))
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -164,8 +195,8 @@ public class AboutSoftware extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.notelysia.windows95generatekey.ImageAvatar GithubAvatar;
     private javax.swing.JLabel firstGithub;
-    private com.notelysia.windows95generatekey.ImageAvatar imageAvatar1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

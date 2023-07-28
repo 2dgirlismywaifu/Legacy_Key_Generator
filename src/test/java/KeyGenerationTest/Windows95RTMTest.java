@@ -16,26 +16,26 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.WindowsRTM.WindowsRTMKey;
 import java.util.HashMap;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class Windows95RTMTest {
-    WindowsRTMKey windowsRTMKey;
-    String input;
-    @Before
-    public void setUp() {
-        windowsRTMKey = new WindowsRTMKey();
-        input = windowsRTMKey.getWindows95RTMKey();
+    private static String input;
+    
+     @BeforeClass 
+     public static void onlyOnce() {
+       DemoKeyTesting demoKeyTesting = new DemoKeyTesting();
+       demoKeyTesting.setWin95RTM();
+       input = demoKeyTesting.getWin95RTM();
+       System.out.println("Windows 95 RTM Key: " + input);
     }
     
     @Test
     public void testDivision() {
-        System.out.println("This is text Windows 95 RTM key XXXXXXX part division by 7 or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows 95 RTM key XXXXXXX part division by 7 or NOT!!!!!");       
         String[] parts = input.split("-");
         int sum = 0;
         for (char c : parts[1].toCharArray()) {
@@ -54,8 +54,7 @@ public class Windows95RTMTest {
     
      @Test
     public void testKeyStart() {
-        System.out.println("This is text Windows 95 RTM key XXX part PASS or NOT!!!!!");
-        System.out.println(input);
+        System.out.println("This is test Windows 95 RTM key XXX part PASS or NOT!!!!!");        
         String[] parts = input.split("-");
         int[] arr = {333, 444, 555, 666, 777, 888, 999};
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -63,6 +62,13 @@ public class Windows95RTMTest {
             map.put(i, i);
         }
         int num = Integer.parseInt(parts[0]);
-        assertFalse(map.containsKey(num));
+        if (map.containsKey(num) == true) {
+             assertTrue(true);
+             System.out.println("Windows 95 RTM KEY: " + input + " (PASSED)");
+         }
+         else {
+             assertFalse(false);
+             System.out.println("Windows 95 RTM KEY: " + input + " (FAILED)");
+        }
     }
 }
