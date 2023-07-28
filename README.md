@@ -20,7 +20,6 @@
   ![Reposize][size-shield]
   ![Lastcommit][commit-shield]
   [![Issues][issues-shield]][issues-url]
-  ![Linecount][linecount-shield]
   [![APACHE License][license-shield]][license-url]
 
 </div>
