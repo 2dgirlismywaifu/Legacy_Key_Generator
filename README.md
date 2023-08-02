@@ -27,7 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 # **About The Project**
 
-This project will generate Windows 95, Windows NT 4.0 and Office 95 activation keys. The rules are based on the youtube channel [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) and this blog: [gurney.dev](https://gurney.dev/posts/mod7/)  provides. All icons use in project are from [icons8](https://icons8.com/).
+This project will generate Windows 95, Windows NT 4.0 and Office 95 activation keys. Windows XP will support in future soon. The rules are based on the youtube channel [FlyTech Video](https://www.youtube.com/watch?v=3DCEeASKNDk&t=72s) and this blog: [gurney.dev](https://gurney.dev/posts/mod7/)  provides. All icons use in project are from [icons8](https://icons8.com/).
 
 
 
