@@ -7,7 +7,7 @@
     <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
-<h3 align="center", style="font-size:40px">Windows 95, Windows NT 4.0, Office 95 - 97 Key Generator</h3>
+<h3 align="center", style="font-size:40px">Legacy Key Generator</h3>
 <p1 align="center", style="font-size:20px">This code is only for educational purposes</p1><br />
   <p2 align="center", style="font-size:20px">
     Piracy is not okay. Please buy the software you are using
