@@ -18,14 +18,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.notelysia</groupId>
-    <artifactId>Windows95GenerateKey</artifactId>
+    <artifactId>LegacyKeyGernerator</artifactId>
     <version>1.1.2</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.notelysia.windows95generatekey.StartProgram</exec.mainClass>
+        <exec.mainClass>com.notelysia.legacygenerator.StartProgram</exec.mainClass>
     </properties>
     
     <build>
@@ -45,7 +45,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.notelysia.windows95generatekey.StartProgram</mainClass>
+              <mainClass>com.notelysia.legacygenerator.StartProgram</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -112,5 +112,5 @@
             <version>2.19.0</version>
         </dependency>
     </dependencies>
-    <name>Windows 95, NT 4.0, Office 95 - 97 Key Generator</name>
+    <name>Legacy Key Generator</name>
 </project>

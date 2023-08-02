@@ -16,10 +16,10 @@
 
 package KeyGenerationTest;
 
-import com.notelysia.windows95generatekey.OfficeKey.Office95;
-import com.notelysia.windows95generatekey.OfficeKey.Office97;
-import com.notelysia.windows95generatekey.WindowsOEM.WindowsOEMKey;
-import com.notelysia.windows95generatekey.WindowsRTM.WindowsRTMKey;
+import com.notelysia.legacygenerator.OfficeKey.Office95;
+import com.notelysia.legacygenerator.OfficeKey.Office97;
+import com.notelysia.legacygenerator.WindowsOEM.WindowsOEMKey;
+import com.notelysia.legacygenerator.WindowsRTM.WindowsRTMKey;
 
 public class DemoKeyTesting {
     
